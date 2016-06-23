@@ -1,5 +1,6 @@
 var express = require('express');
 var db = require('../models');
+var passport = require('../config/ppConfig');
 var router = express.Router();
 
 router.get('/signup', function(req, res) {
@@ -15,8 +16,10 @@ router.post('/signup', function(req, res) {
     }
   }).spread(function(user, created) {
     if (created) {
-      console.log('user created!');
-      res.redirect('/');
+      passport.authenticate('local', {
+        successRedirect: '/',
+        successFlash: 'User created. You are logged in.'
+      })(req, res);
     } else {
       console.log('user with that email already exists');
       res.redirect('/auth/signup');
@@ -29,6 +32,16 @@ router.post('/signup', function(req, res) {
 
 router.get('/login', function(req, res) {
   res.render('auth/login');
+});
+
+router.post('/login', passport.authenticate('local', {
+  successRedirect: '/',
+  failureRedirect: '/auth/login'
+}))
+
+router.get('/logout', function(req, res) {
+  req.logout();
+  res.redirect('/');
 });
 
 module.exports = router;
