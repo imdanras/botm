@@ -31,7 +31,17 @@ div.container {
   float: right;
 }
 
+@media (max-width: 600px) {
+  .facet_sidebar {
+    display: none;
+  }
+}
 
+@media (max-width: 800px) {
+   h2 {
+      font-size: 2em;
+   }
+}
 
 
 
