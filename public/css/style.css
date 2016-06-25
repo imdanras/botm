@@ -6,10 +6,47 @@ body {
   background-size: cover;
 }
 
-.container {
-  width: 100%;
+#burger-nav-btn {
+  height: 90%;
 }
 
-.nav-wrapper {
-  width: 100%;
+body {
+  color: #F7F3E5;
 }
+
+.off-white, #off-white {
+  color: #F7F3E5;
+}
+
+nav .brand-logo {
+  color: #F7F3E5;
+}
+
+div.container {
+  background: rgba(255,255,255,0.4);
+  padding: 20px;
+}
+
+#byLocation {
+  float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

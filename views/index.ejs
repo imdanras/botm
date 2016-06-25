@@ -1,6 +1,14 @@
-<h2>Home</h2>
+<h2>Search for a Burger</h2>
 
-<a href="/auth/signup">Signup</a>
-<a href="/auth/login">Login</a>
-<a href="/auth/logout">Logout</a>
-<a href="/profile">Profile</a>
+
+<form action="/results" method="POST">
+  <div class="form-group">
+    <input id="neighborhood" class="form-control" type="text" name="neighborhood" placeholder="Pick A Neighborhood">
+  </div>
+  <div class="button">
+   <button type ="button" id="byLocation" class="btn btn-primary">Use My Location</button>
+  </div>
+    <div>
+      <button class="btn btn-primary button" type="submit">Search</button>
+    </div>
+</form>
