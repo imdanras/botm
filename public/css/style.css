@@ -6,6 +6,23 @@ body {
   background-size: cover;
 }
 
+/*changes placeholder text*/
+::-webkit-input-placeholder {
+   color: black;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: black;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: red;
+}
+
+:-ms-input-placeholder {
+   color: red;
+}
+
 #burger-nav-btn {
   height: 90%;
 }
@@ -31,12 +48,15 @@ div.container {
   float: right;
 }
 
+
+/*adds sidebar w/ materialize*/
 @media (max-width: 600px) {
   .facet_sidebar {
     display: none;
   }
 }
 
+/*shrinks h2 font size with smaller screens*/
 @media (max-width: 800px) {
    h2 {
       font-size: 2em;
