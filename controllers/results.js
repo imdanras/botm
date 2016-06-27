@@ -14,19 +14,21 @@ var yelp = new Yelp({
   token_secret: 'm8yX5cFDbuMwlfqydZ135DSa7e0'
 });
 
-
+// results landing page
 router.get('/', function(req, res) {
-  yelp.search({ term: 'burger', location: req.query.q })
+  yelp.search({
+    term: 'burger',
+    location: req.query.q })
   .then(function (data) {
-    // var body = JSON.parse(data);
-    console.log(data);
-    // res.send('hi');
+  res.render('results.ejs', { data: data.businesses });
+    // console.log(data);
   })
   .catch(function (err) {
     console.error(err);
   });
-  res.render('results.ejs');
-})
+ })
+
+
 
 
 // router.get('/', function(req, res) {
