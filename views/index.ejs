@@ -1,12 +1,12 @@
 <h2>Search for a Burger</h2>
 
 
-<form action="/results" method="POST">
+<form action="/results" method="GET">
   <div class="form-group">
-    <input id="neighborhood" class="form-control" type="text" name="neighborhood" placeholder="Pick A Neighborhood">
+    <input id="neighborhood" name="q" class="form-control" type="text" placeholder="Pick A Neighborhood">
   </div>
   <div class="button">
-   <button type ="submit" id="byLocation" class="btn btn-primary">Use My Location</button>
+   <button type="submit" id="byLocation" class="btn btn-primary">Use My Location</button>
   </div>
     <div>
       <button class="btn btn-primary button" type="submit">Search</button>
