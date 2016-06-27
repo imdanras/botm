@@ -31,6 +31,10 @@ body {
   color: #F7F3E5;
 }
 
+#resultsDiv {
+  color: black;
+}
+
 .off-white, #off-white {
   color: #F7F3E5;
 }
