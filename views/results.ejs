@@ -1,10 +1,14 @@
-<% console.log('$$$$$ ', data); %>
-
 <div id="resultsDiv">
   <h1 class="text-center">Your Burgers</h1>
     <% data.forEach(function(favorite) { %>
-    <div class="well">
-      <h5 class="text-center"><a href="<%= favorite.url %>"><%= favorite.name %></a><img class="imgUrl" src="<%= favorite.rating_img_url %>"></h5>
+    <div class>
+      <form action="/profile/:id" method="POST">
+        <button class="waves-effect waves-light btn-large" type="submit"><img src="http://icons.iconarchive.com/icons/visualpharm/must-have/16/Favorites-icon.png"></button>
+        <input type="hidden" name="restaurantId" value="<%= favorite.id %>">
+        <input type="hidden" name="restaurantName" value="<%= favorite.name %>">
+        <input type="hidden" name="restaurantUrl" value="<%= favorite.url %>">
+        <h5 class="text-center"><a href="<%= favorite.url %>"><%= favorite.name %></a><img class="imgUrl" src="<%= favorite.rating_img_url %>"></h5>
+      </form>
     </div>
 <% }) %>
 </div>

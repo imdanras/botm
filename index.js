@@ -35,8 +35,11 @@ app.get('/profile', isLoggedIn, function(req, res) {
   res.render('profile');
 });
 
+
+
 app.use('/auth', require('./controllers/auth'));
 app.use('/results', require('./controllers/results'));
+app.use('/profile', require('./controllers/profile'));
 
 var server = app.listen(process.env.PORT || 3000);
 

@@ -18,7 +18,7 @@ var yelp = new Yelp({
 router.get('/', function(req, res) {
   yelp.search({
     term: 'burger',
-    location: req.query.q })
+    location: req.params.hiddenInput || req.query.q })
   .then(function (data) {
   res.render('results.ejs', { data: data.businesses });
     // console.log(data);
@@ -28,8 +28,6 @@ router.get('/', function(req, res) {
     console.error(err);
   });
  })
-
-
 
 
 // router.get('/', function(req, res) {

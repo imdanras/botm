@@ -72,7 +72,11 @@ div.container {
   display: inline-block;
 }
 
-
+.favoriteBtn {
+  float: right;
+  display: block;
+  background-color: #FF0000;
+}
 
 
 
