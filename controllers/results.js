@@ -8,10 +8,10 @@ var Yelp = require('yelp');
 
 //Yelp keys and tokens
 var yelp = new Yelp({
-  consumer_key: '0xWH50LFY6Yif_OOd7uDXQ',
-  consumer_secret: 'u65vgNYAOJa0rFD0DZEtg2Su1W8',
-  token: 'SUb5Caxvwzk2aHb5DuVlonaCJxrDfXCB',
-  token_secret: 'm8yX5cFDbuMwlfqydZ135DSa7e0'
+  consumer_key: process.env.CONSUMER_KEY,
+  consumer_secret: process.env.CONSUMER_SECRET,
+  token: process.env.TOKEN,
+  token_secret: process.env.TOKEN_SECRET
 });
 
 // results landing page
@@ -22,6 +22,7 @@ router.get('/', function(req, res) {
   .then(function (data) {
   res.render('results.ejs', { data: data.businesses });
     // console.log(data);
+    // res.send(data);
   })
   .catch(function (err) {
     console.error(err);

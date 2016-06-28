@@ -67,6 +67,11 @@ div.container {
    }
 }
 
+.imgUrl {
+  float: right;
+  display: inline-block;
+}
+
 
 
 

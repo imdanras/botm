@@ -3,6 +3,8 @@
 <div id="resultsDiv">
   <h1 class="text-center">Your Burgers</h1>
     <% data.forEach(function(favorite) { %>
-    <h5 class="text-center well"><%= favorite.name %></h5>
+    <div class="well">
+      <h5 class="text-center"><a href="<%= favorite.url %>"><%= favorite.name %></a><img class="imgUrl" src="<%= favorite.rating_img_url %>"></h5>
+    </div>
 <% }) %>
 </div>
