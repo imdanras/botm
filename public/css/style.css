@@ -6,7 +6,7 @@ body {
   background-size: cover;
 }
 
-/*changes placeholder text*/
+/*changes placeholder text color*/
 ::-webkit-input-placeholder {
    color: black;
 }
@@ -82,9 +82,14 @@ h5 {
   display: inline-block;
 }
 
+#deleteBtn {
+  display: inline-block;
+  float: right;
+}
 
-
-
+.yelpPower {
+  text-align: center;
+}
 
 
 
