@@ -3,11 +3,11 @@
     <% data.forEach(function(favorite) { %>
     <div class>
       <form action="/profile/:id" method="POST">
-        <button class="waves-effect waves-light btn-large" type="submit"><img src="http://icons.iconarchive.com/icons/visualpharm/must-have/16/Favorites-icon.png"></button>
         <input type="hidden" name="restaurantId" value="<%= favorite.id %>">
         <input type="hidden" name="restaurantName" value="<%= favorite.name %>">
         <input type="hidden" name="restaurantUrl" value="<%= favorite.url %>">
-        <h5 class="text-center"><a href="<%= favorite.url %>"><%= favorite.name %></a><img class="imgUrl" src="<%= favorite.rating_img_url %>"></h5>
+        <a class="btn-floating waves-effect waves-light red"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+        <h5 class="text-center"><a href="<%= favorite.url %>"><%= favorite.name %></a></h5><img class="imgUrl" src="<%= favorite.rating_img_url %>">
       </form>
     </div>
 <% }) %>

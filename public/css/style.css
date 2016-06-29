@@ -73,12 +73,14 @@ div.container {
 }
 
 .favoriteBtn {
-  float: right;
+  float: left;
   display: block;
-  background-color: #FF0000;
+  background-color: red;
 }
 
-
+h5 {
+  display: inline-block;
+}
 
 
 
