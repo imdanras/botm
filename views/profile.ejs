@@ -1,8 +1,15 @@
 <h2>Profile Page</h2>
+  <a href="/update" <button class="waves-effect waves-light blue button">>Update</button></a>
 
-<% console.log(favorite) %>
-
-<div class="favorites">
-  <a href="<%= favorite.restaurantUrl %>"><%= favorite.restaurantName %></a>
-<button type="submit" class="btn-floating waves-effect waves-light red" id="deleteBtn">X</button>
-</div>
+<% favorite.forEach(function(favorite) { %>
+  <div class="favorites">
+    <form action="/profile/delete/<%= favorite.userId %>" method="POST">
+      <h4><a href="<%= favorite.restaurantUrl %>"><%= favorite.restaurantName %></a>
+      </h4>
+        <input type="hidden" name="restaurantId" value="<%= favorite.restaurantId %>">
+        <input type="hidden" name="restaurantName" value="<%= favorite.restaurantName %>">
+        <input type="hidden" name="restaurantUrl" value="<%= favorite.restaurantUrl %>">
+      <input value="Delete" type="submit" class="waves-effect waves-light red button" id="deleteBtn"></input>
+    </form>
+  </div>
+<% }); %>

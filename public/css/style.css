@@ -82,11 +82,6 @@ h5 {
   display: inline-block;
 }
 
-#deleteBtn {
-  display: inline-block;
-  float: right;
-}
-
 .yelpPower {
   text-align: center;
 }
