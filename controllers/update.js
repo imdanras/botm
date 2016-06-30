@@ -9,16 +9,17 @@ router.get('/', function(req, res) {
   res.render('update.ejs');
 });
 
-router.put('/:id', function(req, res) {
-  var userToEdit = req.params.id;
-
-  // Edit team here
-
-  /*
-   * instead of rendering a page, send back JSON or text, which can be read
-   * in the .done() promise of the AJAX call
-   */
-  res.send({message: 'success'});
+router.put('/', function(req, res) {
+  var emailToEdit = req.body.email;
+  db.user.update({email:emailToEdit},
+    {where:{
+      id:req.user.id
+    }}).then(function(user) {
+    // user.email = emailToEdit;
+    // user.save().then(function(){
+      res.send({ message: 'success' });
+    // });
+  });
 });
 
 

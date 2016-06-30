@@ -7,20 +7,14 @@ $(".button-collapse").sideNav();
 $('#update').on('submit', function(e) {
   e.preventDefault();
   var userElement = $(this);
-  var userName = userElement.attr('action');
-  var teamData = userElement.serialize();
+  var userEmail = userElement.attr('action');
   $.ajax({
     method: 'PUT',
-    name: userName,
-    data: teamData
+    url: $(this).attr('action'),
+    data: {
+      email: $('#userEmail').val(),
+    }
   }).done(function(data) {
-    // get data returned from the PUT route
-    console.log(data);
-
-    // do stuff when the PUT action is complete
-    userElement.remove();
-
-    // or, you can redirect to another page
     window.location = '/profile';
   });
 });
