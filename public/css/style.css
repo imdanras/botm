@@ -94,9 +94,13 @@ h5 {
   border-radius: 10%;
 }
 
+a {
+  color: black;
+}
 
-
-
+#resultsDiv a:hover, .container a:hover {
+  background-color: white;
+}
 
 
 

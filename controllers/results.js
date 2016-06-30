@@ -19,7 +19,7 @@ var yelp = new Yelp({
 router.get('/', function(req, res) {
   yelp.search({
     term: 'burger',
-    location: req.query.q })
+    location: req.query.q + ' Seattle' })
   .then(function(data) {
   res.render('results.ejs', { data: data.businesses });
     // console.log(data);
