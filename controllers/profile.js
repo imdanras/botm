@@ -29,7 +29,7 @@ router.get('/', isLoggedIn, function(req, res) {
 
 
 router.post('/delete/:id', function(req, res) {
-  console.log('$$$$ ', req.user.id, req.body.restaurantId, req.body.restaurantName, req.body.restaurantUrl);
+  // console.log('$$$$ ', req.user.id, req.body.restaurantId, req.body.restaurantName, req.body.restaurantUrl);
   db.favorite.destroy({
     where: {
       userId: req.user.id,

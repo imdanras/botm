@@ -43,6 +43,7 @@ nav .brand-logo {
   color: #F7F3E5;
 }
 
+/*results div styling*/
 div.container {
   background: rgba(255,255,255,0.4);
   padding: 20px;
@@ -67,6 +68,7 @@ div.container {
    }
 }
 
+/*Yelp star rating images*/
 .imgUrl {
   float: right;
   display: inline-block;
@@ -86,7 +88,11 @@ h5 {
   text-align: center;
 }
 
-
+.update {
+  color: white;
+  padding: 2px 5px;
+  border-radius: 10%;
+}
 
 
 
