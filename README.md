@@ -31,7 +31,7 @@ This is a simple app to determine burger locations based on either a Seattle nei
 * User's logged in state displays across the top for testing purposes
 
 ### Wireframe
-(http://imgur.com/zNUBsTu)
+http://imgur.com/zNUBsTu
 
 ### Disclaimer
 All search results are product of Yelp API
