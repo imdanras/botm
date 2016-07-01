@@ -2,6 +2,11 @@
 
 This is a simple app to determine burger locations based on either a Seattle neighborhood search or by using your location.
 
+# User Story
+* As a consumer, I'd like to know relevant burger places near me
+* As a consumer, I'd like to be able to save favorite burger places' information
+
+
 
 ### Screenshots
 <img src="/public/static/img/landing.png" width="280">
@@ -24,6 +29,9 @@ This is a simple app to determine burger locations based on either a Seattle nei
 * Mobile responsiveness is not ideal
 * Search button also works as 'Use My Location' button
 * User's logged in state displays across the top for testing purposes
+
+### Wireframe
+(http://imgur.com/zNUBsTu)
 
 ### Disclaimer
 All search results are product of Yelp API
