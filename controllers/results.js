@@ -7,7 +7,7 @@ var Yelp = require('yelp');
 
 // we are in /results
 
-//Yelp keys and tokens
+// Yelp keys and tokens
 var yelp = new Yelp({
   consumer_key: process.env.CONSUMER_KEY,
   consumer_secret: process.env.CONSUMER_SECRET,
@@ -17,21 +17,25 @@ var yelp = new Yelp({
 
 // results landing page
 router.get('/', function(req, res) {
-  yelp.search({
+  var search = {
     term: 'burger',
-    location: req.query.q + ' Seattle' })
+  }
+  if (req.query.q) {
+    search.location = req.query.q + ', Seattle'
+  }
+  if (req.query.ll && !search.location) {
+    search.ll = req.query.ll
+  }
+  yelp.search(search)
   .then(function(data) {
-  res.render('results.ejs', { data: data.businesses });
+    res.render('results.ejs', { data: data.businesses });
     // console.log(data);
     // res.send(data);
   })
   .catch(function(err) {
     console.error(err);
   });
- });
-
-
-
+});
 
 // router.delete('/profile')
 

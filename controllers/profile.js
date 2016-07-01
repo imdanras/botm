@@ -20,27 +20,43 @@ router.get('/', isLoggedIn, function(req, res) {
     where: {
       userId: req.user.id
     }
-    }).then(function(favorite) {
+  }).then(function(favorites) {
       // console.log('$$$$', favorite);
       // res.send('hi');
-      res.render('profile.ejs', { favorite: favorite });
+      console.log('favorites: ', favorites);
+    res.render('profile.ejs', { favorites: favorites });
+  });
+});
+
+
+router.delete('/delete/:id', function(req, res) {
+  console.log('/delete/:id route hit');
+  db.user.findOne({
+    where: {
+      id: req.user.id
+    }
+  }).then(function(user) {
+    console.log('delete returned');
+    console.log(req.params.id);
+    user.removeFavorite(req.params.id).then(function() {
+      console.log('removed favorite');
+      res.send({ message: 'hooray' });
     });
   });
+});
 
-
-router.post('/delete/:id', function(req, res) {
-  // console.log('$$$$ ', req.user.id, req.body.restaurantId, req.body.restaurantName, req.body.restaurantUrl);
-  db.favorite.destroy({
-    where: {
-      userId: req.user.id,
-      restaurantId: req.body.restaurantId,
-      restaurantName: req.body.restaurantName,
-      restaurantUrl: req.body.restaurantUrl
-  }
-}).then(function(noFavorite) {
-    console.log('no favorite ', noFavorite);
-    res.redirect('/profile');
-  })
-})
+// router.post('/delete/:id', function(req, res) {
+//   db.favorite.destroy({
+//     where: {
+//       userId: req.user.id,
+//       restaurantId: req.body.restaurantId,
+//       restaurantName: req.body.restaurantName,
+//       restaurantUrl: req.body.restaurantUrl
+//     }
+//   }).then(function(noFavorite) {
+//     console.log('no favorite ', noFavorite);
+//     res.redirect('/profile');
+//   });
+// });
 
 module.exports = router;

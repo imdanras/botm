@@ -17,7 +17,7 @@ app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true
-}))
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
@@ -25,12 +25,11 @@ app.use(function(req, res, next) {
   res.locals.alerts = req.flash();
   res.locals.currentUser = req.user;
   next();
-})
+});
 
 app.get('/', function(req, res) {
   res.render('index');
 });
-
 
 
 app.use('/auth', require('./controllers/auth'));

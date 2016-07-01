@@ -11,7 +11,7 @@ passport.deserializeUser(function(id, cb) {
   .then(function(user) {
     cb(null, user);
   }).catch(cb);
-})
+});
 
 passport.use(new LocalStrategy({
   usernameField: 'email',
@@ -20,10 +20,10 @@ passport.use(new LocalStrategy({
   db.user.find({
     where: { email: email }
   }).then(function(user) {
-if (user && user.validPassword(password)) {
-  cb(null, user);
-  } else {
-    cb(null, false);
+    if (user && user.validPassword(password)) {
+      cb(null, user);
+    } else {
+      cb(null, false);
     }
   }).catch(cb);
 }));
