@@ -15,7 +15,7 @@ This is a simple app to determine burger locations based on either a Seattle nei
 <img src="/public/img/responsive.png" width="140">
 
 ### Features
-* A user can search burger places based on location or, if the user gives permission, based on their current location.
+* A user can search burger places based on a Seattle neighborhood query or, if the user gives permission, based on their current location.
 * A user can create an account in order to save favorites
 * Each search result and each favorite links to its' corresponding yelp page
 
