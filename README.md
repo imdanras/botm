@@ -4,10 +4,10 @@ This is a simple app to determine burger locations based on either a Seattle nei
 
 
 ### Screenshots
-<img src="./static/img/landing.png" width="280">
-<img src="./static/img/login.png" width="280">
-<img src="./static/img/location.png" width="280">
-<img src="./static/img/responsive.png" width="140">
+<img src="./public/static/img/landing.png" width="280">
+<img src="./public/static/img/login.png" width="280">
+<img src="./public/static/img/location.png" width="280">
+<img src="./public/static/img/responsive.png" width="140">
 
 ### Features
 * A user can search burger places based on location or, if the user gives permission, based on their current location.
