@@ -1,27 +1,29 @@
-# Express Authentication
+# Burger of the Month
 
-Express authentication template using Passport + flash messages + custom middleware
+This is a simple app to determine burger locations based on either a Seattle neighborhood search or by using your location.
 
-## Getting Started
 
-#### Scaffold w/tests (see `master` branch)
+### Screenshots
+<img src="./static/img/landing.png" width="280">
+<img src="./static/img/login.png" width="280">
+<img src="./static/img/location.png" width="280">
+<img src="./static/img/responsive.png" width="140">
 
-* Run `npm install` to install dependencies
-  * Use `npm run lint:js` to lint your JS
-  * Use `npm run lint:css` to lint your CSS
-  * Use `npm test` to run tests
-* Setup the databases
-  * Change the database names in `config/config.json` to reflect your project
-  * Run `createdb project_name_development` to create the development database
-  * Run `createdb project_name_test` to create the test database
+### Features
+* A user can search burger places based on location or, if the user gives permission, based on their current location.
+* A user can create an account in order to save favorites
+* Each search result and each favorite links to its' corresponding yelp page
 
-#### Finished version (see `brian-finished` branch)
+### Credits
+* [jQuery](http://jquery.com)
+* [Materialize](http://materializecss.com/)
+* [Unsplash](http://unsplash.com)
+* [Yelp](https://www.yelp.com/developers/documentation/v2/search_api)
 
-* Run `npm install` to install dependencies
-  * Use `npm run lint:js` to lint your JS
-  * Use `npm run lint:css` to lint your CSS
-  * Use `npm test` to run tests
-* Setup the databases
-  * Run `createdb express_auth_development` to create the development database
-  * Run `createdb express_auth_test` to create the test database
-  * Run `sequelize db:migrate` to run migrations
+### Known Issues
+* Mobile responsiveness is not ideal
+* Search button also works as 'Use My Location' button
+* User's logged in state displays across the top for testing purposes
+
+### Disclaimer
+All search results are product of Yelp API
