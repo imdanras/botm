@@ -4,7 +4,7 @@ var isLoggedIn = require('../middleware/isLoggedIn');
 var passport = require('../config/ppConfig');
 var router = express.Router();
 
-router.post('/:id', function(req, res) {
+router.post('/:id', isLoggedIn, function(req, res) {
   db.favorite.create({
     userId: req.user.id,
     restaurantId: req.body.restaurantId,
