@@ -55,6 +55,9 @@ div.container {
   .facet_sidebar {
     display: none;
   }
+  .text-center a {
+    font-size: 0.7em;
+  }
 }
 
 /*shrinks h2 font size with smaller screens*/
